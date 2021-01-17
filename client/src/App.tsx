@@ -1,46 +1,75 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import {Dagger, ItemEnum, ItemRarityEnum} from "./types/itemTypes";
 
-interface TestType {
-  a: number,
-  b?: number
+type ItemType = {
+  id: number,
+  name: string,
+  to: number[] | never[],
+  from: number[]
 }
 
-
-
 function App() {
+  const [currentItem, setCurrentItem] = useState<ItemType | null>(null)
+  const [currentFrom, setCurrentFrom] = useState<ItemType[]>([])
+  const [items, setItems] = useState<ItemType[]>([
+    {id: 0, name: 'Name0', to: [], from: [1, 2]},
+    {id: 1, name: 'Name1', to: [], from: [0, 1]},
+    {id: 2, name: 'Name2', to: [], from: [3, 2]},
+    {id: 3, name: 'Name3', to: [], from: [2, 0]},
+  ])
 
-  const roseKnife: Array<Dagger> = [{
-    id: 4,
-    name: 'Rose Knife',
-    rarity: ItemRarityEnum.blue,
-    weaponType: 'Dagger',
-    maxQuantityInStack: 1,
-    itemBuildsInto: [{itemId: 5}, {itemId: 6}],
-    imageUrl: '...',
-    craftQuantity: 1,
-    heroList: ['...'],
-    itemsForCrafting: [{itemId: 7}, {itemId: 8}],
-    type: ItemEnum.weapon,
-    specifications: {
-      attackPower: 20,
-      movementSpeed: 0.1,
-      cooldownReduction: 10
+  useEffect(() => {
+    const item: ItemType = items[Math.floor(Math.random() * 4)]
+    setCurrentItem(item)
+  }, [])
+
+  useEffect(() => {
+    if (currentItem !== null &&
+      currentFrom[0]?.id === currentItem?.from[0] &&
+      currentFrom[1]?.id === currentItem?.from[1]
+    ) {
+      console.log('heh')
+      alert('POBEDA')
+      //вернуть всё к началу
+      //reloader()
     }
-  }]
+  }, [currentFrom])
+
+  const addItemInFromArray = (item: ItemType) => {
+    if (currentFrom.length < 2) {
+      setItems(items.filter(el => el.id !== item.id))
+      setCurrentFrom([...currentFrom, item])
+    }
+  }
+
+  const removeItemInFromArray = (item: ItemType) => {
+    setCurrentFrom(currentFrom.filter(el => el.id !== item.id))
+    setItems([...items, item])
+  }
+
 
   return (
     <div className="App">
-      {roseKnife.map(el => {
-        return(
-          <div>
-            {el.airSupply ? <p>Air Supply: {el.airSupply}</p> : null}
-            {el.name ? <p>Name: {el.name}</p> : null}
-            {el.weaponType ? <p>Weapon Type: {el.weaponType}</p> : null}
-            {el.type ? <p>Type: {el.type}</p> : null}
+      {currentItem
+        ? <div>
+          <p>{currentItem.name}</p>
+          <p>{currentItem.from[0]}</p>
+          <p>{currentItem.from[1]}</p>
+        </div>
+        : null}
+        <hr/>
+      {items.map(el => {
+        return (
+          <div style={{width: 200, height: 100, border: '1px solid white'}} onClick={() => addItemInFromArray(el)}>
+            <p>{el.id}</p>
+          </div>
+        )
+      })}
+      <hr/>
+      {currentFrom.map(el => {
+        return (
+          <div style={{width: 200, height: 100, border: '1px solid white'}} onClick={() => removeItemInFromArray(el)}>
+            <p>{el.id}</p>
           </div>
         )
       })}
