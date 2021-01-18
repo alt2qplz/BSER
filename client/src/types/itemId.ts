@@ -3,7 +3,7 @@ export enum ItemId {
   // --- WEAPONS ---
 
   //Daggers
-  scissors = 1000,
+  scissors,
   fountainPen,
   kitchenKnife,
   armyKnife,
@@ -14,7 +14,7 @@ export enum ItemId {
   fragarach,
 
   //Two-handed Swords
-  rustySword = 2000,
+  rustySword,
   shamshir,
   katana,
   masamune,
@@ -31,7 +31,7 @@ export enum ItemId {
   dainsleif,
 
   //Axes
-  pickaxe = 3000,
+  pickaxe,
   hatchet,
   chainScythe,
   battleAxe,
@@ -45,7 +45,7 @@ export enum ItemId {
   harpe,
 
   //Dual Swords
-  twinSwords = 4000,
+  twinSwords,
   florentine,
   divineDualSwords,
   starsteelTwinSwords,
@@ -53,7 +53,7 @@ export enum ItemId {
   lloigorZahr,
 
   //Gloves
-  brassKnuckles = 5000,
+  brassKnuckles,
   cottonGloves,
   leatherGloves,
   ironNKnuckles,
@@ -73,7 +73,7 @@ export enum ItemId {
   imperialSilkGloves,
 
   //Tonfas
-  bamboo = 6000,
+  bamboo,
   woodenTonfa,
   policeBaton,
   ryukyuTonfa,
@@ -82,7 +82,7 @@ export enum ItemId {
   plasmaTonfa,
 
   //Bats
-  branch = 7000,
+  branch,
   shortRod,
   longRod,
   goblinBast,
@@ -94,7 +94,7 @@ export enum ItemId {
   monkeyKingBar,
 
   //Whips
-  whip = 8000,
+  whip,
   ropeCuffs,
   bullWhip,
   windWhip,
@@ -105,7 +105,7 @@ export enum ItemId {
   bloodyNineTails,
 
   //Throw
-  ironBall = 9000,
+  ironBall,
   baseball,
   grenade,
   molotovCocktail,
@@ -123,7 +123,7 @@ export enum ItemId {
   rutheniumMarble,
 
   //Shuriken
-  razor = 10000,
+  razor,
   playingCards,
   chalk,
   dart,
@@ -149,7 +149,7 @@ export enum ItemId {
   petalTorrent,
 
   //Bows
-  bow = 11000,
+  bow,
   woodenBow,
   longBow,
   compositeBow,
@@ -165,7 +165,7 @@ export enum ItemId {
   failnaught,
 
   //Crossbows
-  shortCrossbow = 12000,
+  shortCrossbow,
   longCrossbow,
   crossbow,
   powerCrossbow,
@@ -179,7 +179,7 @@ export enum ItemId {
   sharanga,
 
   //Pistols
-  walterPPK = 13000,
+  walterPPK,
   magnumPython,
   berettaM92F,
   FN57,
@@ -192,7 +192,7 @@ export enum ItemId {
   kelte,
 
   //Assault Rifles
-  fedorova = 14000,
+  fedorova,
   STG44,
   AK47,
   M16A1,
@@ -202,7 +202,7 @@ export enum ItemId {
   XCR,
 
   //Sniper Rifles
-  longRifle = 15000,
+  longRifle,
   springfield,
   harpoonGun,
   goldenRifle,
@@ -214,7 +214,7 @@ export enum ItemId {
   theDeadlyRay,
 
   //Hammers
-  hammer = 16000,
+  hammer,
   warhammer,
   morningStar,
   blackStagHammer,
@@ -225,7 +225,7 @@ export enum ItemId {
   magicStick,
 
   //Spears
-  shortSpear = 17000,
+  shortSpear,
   bambooSpear,
   bident,
   pike,
@@ -241,7 +241,7 @@ export enum ItemId {
   spearOfLonginus,
 
   //Nunchakus
-  steelChain = 18000,
+  steelChain,
   nunchaku,
   sharper,
   bleeder,
@@ -249,7 +249,7 @@ export enum ItemId {
   vibroNunchaku,
 
   //Rapiers
-  needle = 19000,
+  needle,
   fencingRapier,
   apricotSword,
   swordOfJustice,
@@ -260,7 +260,7 @@ export enum ItemId {
   mistilteinn,
 
   //Guitars
-  starterGuitar = 20000,
+  starterGuitar,
   goldenBridge,
   singleCoilPickup,
   rubySpecial,
@@ -275,8 +275,348 @@ export enum ItemId {
   satisfaction,
   wonderfulTonight,
   theWall,
-  teenSpirit
+  teenSpirit,
 
+  // --- ARMOR ---
 
+  //chest
+  windbreaker,
+  monksRobe,
+  wetsuit,
+  fabricArmor,
+  leatherArmor,
+  leatherJacket,
+  turtleDobok,
+  militarySuit,
+  patchedRobe,
+  dress,
+  bikini,
+  divingSuit,
+  riderJacket,
+  chainArmor,
+  qipao,
+  sheetMetalArmor,
+  hanbok,
+  bulletproofVest,
+  sunsetArmor,
+  covertAgentUniform,
+  opticalCamouflageSuit,
+  rockersJacket,
+  mithrilArmor,
+  crusaderArmor,
+  amazonessArmor,
+  dragonDobok,
+  commandersArmor,
+  butlersSuit,
+  battleSuit,
+  EODSuit,
+  blazingDress,
+  kabana,
+  queenOfHearts,
 
+  //head
+  hairbrand,
+  hat,
+  bikeHelmet,
+  mask,
+  circlet,
+  beret,
+  chainCoif,
+  safetyHelmet,
+  ballisticHelmet,
+  fireHelmet,
+  tiara,
+  crown,
+  closeHelm,
+  motorcycleHelmet,
+  mithrilHelm,
+  crystalTiara,
+  tacticalOPSHelmet,
+  helmOfBanneret,
+  imperialCrown,
+  imperialBurgonet,
+  chineseOperaMask,
+  laurelWreath,
+
+  //arm
+  watch,
+  bandage,
+  bracelet,
+  leatherShield,
+  squadLeaderArmband,
+  bracer,
+  sheath,
+  goldenBracelet,
+  bazuband,
+  crimsonBracelet,
+  steelShield,
+  cubeWatch,
+  swordStopper,
+  draupnir,
+  mithrilShield,
+  vitalSignSensor,
+  creedOfTheKnight,
+  sheathOfShahJahan,
+  braceletOfSkadi,
+  radar,
+  autoArms,
+
+  //leg
+  slippers,
+  runningShoes,
+  tights,
+  kneePads,
+  chainLeggings,
+  highHeels,
+  heelys,
+  repairedSlippers,
+  boots,
+  steelKneePads,
+  maverickRunner,
+  combatBoots,
+  killerHeels,
+  straitjacketSneakers,
+  featherBoots,
+  mithrilBoots,
+  bucephalus,
+  whiteRhinos,
+  EODBoots,
+  glacialShoes,
+  bootsOfHermes,
+  redShoes,
+
+  //accessory
+  feather,
+  flower,
+  ribbon,
+  fan,
+  buddhistScripture,
+  box,
+  holyGrail,
+  cross,
+  binoculars,
+  saintsRelic,
+  flowerOfFate,
+  glassPieces,
+  doll,
+  sniperScope,
+  buddhaSarira,
+  quiver,
+  featherDuster,
+  gildedQuillFan,
+  shamansBronze,
+  whiteCraneFan,
+  powderOfLife,
+  uchiwa,
+  magazine,
+  lacedQuiver,
+  revengeOfGoujian,
+  moonlightPendant,
+  schrodingersBox,
+  veritasLuxMea,
+  glacialIce,
+  trueSamadhiFire,
+  emeraldTablet,
+
+  // --- CONSUMABLES ---
+
+  //food
+  potato,
+  cod,
+  lemon,
+  garlic,
+  adhesiveBandage,
+  carp,
+  bread,
+  meat,
+  egg,
+  ramen,
+  orientalHerb,
+  chocolate,
+  curryPowder,
+  honeyCodSteak,
+  cannedCodLiver,
+  garlicBread,
+  butter,
+  herbalMedicine,
+  carpBread,
+  holyWater,
+  disinfectant,
+  chocoPie,
+  acupunctureNeedle,
+  orchid,
+  tandooriChicken,
+  baconAndGarlicSticks,
+  bun,
+  hamburger,
+  potatoBread,
+  potatoSoup,
+  fishFilletWithEggs,
+  citrusCake,
+  lemonIceCream,
+  honeyGarlicPickle,
+  eggRun,
+  easterEgg,
+  whiskyBonbon,
+  chocoIceCream,
+  curryBun,
+  spicyFishStew,
+  frenchFries,
+  bakedPotato,
+  bakedCarp,
+  grilledChileanSeaBass,
+  hotRamen,
+  mochaBread,
+  scrambledEgg,
+  chocolateChipCookies,
+  chocoPieBox,
+  curry,
+  orientalConcoction,
+  honeyButter,
+  friedChicken,
+  healingPotion,
+  boiledEgg,
+  poundCake,
+  curryCroquette,
+  steak,
+  firstAidKit,
+  butterFriedPotatoes,
+  fishCutlet,
+  stirFriedRamen,
+  coldNoodles,
+  zenVitality,
+  garlicRamen,
+  fishAndChips,
+
+  //Beverage
+  honey,
+  water,
+  ice,
+  whiskey,
+  coffee,
+  carbonatedWater,
+  milk,
+  boilingWater,
+  lemonade,
+  waterBottle,
+  baijiu,
+  soju,
+  iceCoffee,
+  cocktail,
+  coffeeLiqueur,
+  cola,
+  latte,
+  honeyMilk,
+  highball,
+  chocolateMilk,
+  honeyWater,
+  iceWater,
+  onTheRocks,
+  cowboy,
+  kaoliangLiquor,
+  hotHoneyWater,
+  flowerLiquor,
+  americano,
+  herbalLiquor,
+  whiskeyCocktail,
+  purifiedWater,
+  canOfCola,
+  hotChocolate,
+  whiteRussian,
+
+  // SPECIAL
+
+  //summon
+  surveillanceCamera,
+  snare,
+  mousetrap,
+  pianoWire,
+  spikedPlank,
+  enhancedMousetrap,
+  dynamite,
+  bambooTrap,
+  boobyTrap,
+  clangClatter,
+  telephotoCamera,
+  jungleGuillotine,
+  explosiveTrap,
+  mine,
+  pendulumAxe,
+  RDX,
+  mithrilString,
+  fireTrap,
+  hiddenMaiden,
+  stingburst,
+  C4,
+  doubleGuillotine,
+  claymore,
+  remoteMine,
+  smartBomb,
+
+  // --- INGREDIENTS ---
+
+  //material
+  stone,
+  glassBottle,
+  nail,
+  leather,
+  turtleShell,
+  rubber,
+  scrapMetal,
+  lighter,
+  laserPointer,
+  stallionMedal,
+  battery,
+  alcohol,
+  oil,
+  cloth,
+  gemstone,
+  glue,
+  paper,
+  ironOre,
+  can,
+  gunpowder,
+  steel,
+  oilcloth,
+  heatedOil,
+  ruby,
+  deadBattery,
+  whitePowder,
+  meteorite,
+  ash,
+  electronicParts,
+  blueprint,
+  ironSheet,
+  gold,
+  heatedStone,
+  treeOfLife,
+  moonstone,
+  poison,
+  motor,
+  mithril,
+  glassPanel,
+  ionBattery,
+  VFBloodSample,
+  cellPhone,
+  forceCore
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

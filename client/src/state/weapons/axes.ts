@@ -27,7 +27,7 @@ const pickaxe: Axe = {
     {gameLocation: GameLocationEnum.pond, quantity: 7},
     {gameLocation: GameLocationEnum.beach, quantity: 7},
     {gameLocation: GameLocationEnum.cemetery, quantity: 7},
-    {gameLocation: GameLocationEnum.forest, quantity: 8},
+    {gameLocation: GameLocationEnum.forest, quantity: 8}
   ],
   hunt: [
     {enemy: EnemiesEnum.bat, dropChance: DropChanceEnum.rarely}
@@ -47,7 +47,7 @@ const hatchet: Axe = {
   type: ItemTypeEnum.weapon,
   weaponType: WeaponEnum.axe,
   heroList: axeHeroList,
-  id: 3002,
+  id: ItemId.hatchet,
   name: 'Hatchet',
   explore: [
     {gameLocation: GameLocationEnum.pond, quantity: 4},
@@ -65,7 +65,7 @@ const hatchet: Axe = {
   itemBuildsInto: [
     {itemId: ItemId.battleAxe},
     {itemId: 21535}, // Pendulum Axe (Summon)
-    {itemId: 5153} //Halberd Axe (Spear)
+    {itemId: ItemId.halberdAxe} //Halberd Axe (Spear)
   ]
 }
 
