@@ -10,7 +10,6 @@ import {
 
 export type HuntType = {enemy: EnemiesEnum, dropChance: DropChanceEnum}
 export type ExploreType = {gameLocation: GameLocationEnum, quantity: number}
-export type ItemId = {itemId: number}
 
 export interface ItemSpecificationType {
   attackPower?: number
@@ -39,45 +38,23 @@ export interface ItemSpecificationType {
   trapDamage?: number
 }
 
-export interface Item {
+export interface BaseItemType {
   id: number
   name: string
-  imageUrl: string
-  type: ItemTypeEnum
   rarity: ItemRarityEnum
+  ingredients?: [number, number] //itemId
+}
 
-  itemBuildsInto?: ItemId[]
+export interface ItemType extends BaseItemType {
+  img: string
+  type: ItemTypeEnum
+
+  baseStack?: number
+  buildsInto?: number[] //itemId
   specifications?: ItemSpecificationType
-  itemsForCrafting?: [ItemId, ItemId]
-  craftQuantity?: number
   explore?: ExploreType[]
   hunt?: HuntType[]
   airSupply?: AirSupplyEnum
   maxQuantityInStack?: number
   collect?: CollectEnum
-}
-
-export interface Dagger extends Item {
-  type: ItemTypeEnum.weapon
-  weaponType: 'Dagger'
-  heroList: [string]
-}
-
-const roseKnife: Dagger = {
-  id: 4,
-  name: 'Rose Knife',
-  rarity: ItemRarityEnum.blue,
-  weaponType: 'Dagger',
-  maxQuantityInStack: 1,
-  itemBuildsInto: [{itemId: 5}, {itemId: 6}],
-  imageUrl: '...',
-  craftQuantity: 1,
-  heroList: ['...'],
-  itemsForCrafting: [{itemId: 7}, {itemId: 8}],
-  type: ItemTypeEnum.weapon,
-  specifications: {
-    attackPower: 20,
-    movementSpeed: 0.1,
-    cooldownReduction: 10
-  }
 }

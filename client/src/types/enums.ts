@@ -30,11 +30,11 @@ export enum WeaponEnum {
 }
 
 export enum ItemRarityEnum {
-  base = 'base',
-  green = 'green',
-  blue = 'blue',
-  purple = 'purple',
-  yellow = 'yellow'
+  base,
+  green,
+  blue,
+  purple,
+  yellow
 }
 
 export enum GameLocationEnum {

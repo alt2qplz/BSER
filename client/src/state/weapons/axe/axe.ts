@@ -1,5 +1,5 @@
-import {Item} from "../../types/itemTypes";
-import {ItemId} from "../../types/itemId";
+import {ItemType} from "../../../types/itemTypes";
+import {ItemId} from "../../../types/itemId";
 import {
   DropChanceEnum,
   EnemiesEnum,
@@ -7,20 +7,24 @@ import {
   ItemRarityEnum,
   ItemTypeEnum,
   WeaponEnum
-} from "../../types/enums";
+} from "../../../types/enums";
 
-const axeHeroList: string[] = ['Jackie']
-
-interface Axe extends Item {
+interface TypicalAxeType {
   type: ItemTypeEnum.weapon
   weaponType: WeaponEnum.axe
   heroList: string[]
 }
 
-const pickaxe: Axe = {
+const typicalAxe: TypicalAxeType = {
   type: ItemTypeEnum.weapon,
   weaponType: WeaponEnum.axe,
-  heroList: axeHeroList,
+  heroList: ['Jackie']
+}
+
+type Axe = TypicalAxeType & ItemType
+
+const pickaxe: Axe = {
+  ...typicalAxe,
   id: ItemId.pickaxe,
   name: 'Pickaxe',
   explore: [
@@ -33,20 +37,15 @@ const pickaxe: Axe = {
     {enemy: EnemiesEnum.bat, dropChance: DropChanceEnum.rarely}
   ],
   rarity: ItemRarityEnum.base,
-  imageUrl: '...',
+  img: '...',
   specifications: {
     attackPower: 15
   },
-  itemBuildsInto: [
-    {itemId: ItemId.chainScythe},
-    {itemId: 14032} //gold
-  ]
+  buildsInto: [ItemId.chainScythe, 14032]
 }
 
 const hatchet: Axe = {
-  type: ItemTypeEnum.weapon,
-  weaponType: WeaponEnum.axe,
-  heroList: axeHeroList,
+  ...typicalAxe,
   id: ItemId.hatchet,
   name: 'Hatchet',
   explore: [
@@ -58,31 +57,9 @@ const hatchet: Axe = {
     {enemy: EnemiesEnum.wildDog, dropChance: DropChanceEnum.rarely}
   ],
   rarity: ItemRarityEnum.base,
-  imageUrl: '...',
+  img: '...',
   specifications: {
     attackPower: 25
   },
-  itemBuildsInto: [
-    {itemId: ItemId.battleAxe},
-    {itemId: 21535}, // Pendulum Axe (Summon)
-    {itemId: ItemId.halberdAxe} //Halberd Axe (Spear)
-  ]
-}
-
-const lightHatched: Axe = {
-  id: 0,
-  name: 'Light Hatched',
-  itemsForCrafting: [{itemId: 1}, {itemId: 2}],
-  craftQuantity: 1,
-  heroList: axeHeroList,
-  imageUrl: '...',
-  itemBuildsInto: [{itemId: 3}],
-  maxQuantityInStack: 1,
-  rarity: ItemRarityEnum.blue,
-  type: ItemTypeEnum.weapon,
-  weaponType: WeaponEnum.axe,
-  specifications: {
-    attackPower: 61,
-    movementSpeed: 0.1
-  }
+  buildsInto: [ItemId.battleAxe, 21535, ItemId.halberdAxe]
 }
